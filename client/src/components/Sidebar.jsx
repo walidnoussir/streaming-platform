@@ -43,7 +43,7 @@ function Sidebar() {
       <button
         title="Side navigation"
         type="button"
-        className={`visible fixed left-0 top-2 cursor-pointer z-40 order-10 block h-16 w-16 self-center rounded bg-white opacity-100 lg:hidden dark:bg-slate-800 ${
+        className={`visible fixed left-0 top-2 cursor-pointer z-40 order-10 block h-16 w-16 self-center rounded bg-white opacity-100 lg:hidden dark:bg-dark-3 transition-colors duration-300 ${
           isSideNavOpen
             ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(3)]:w-0 [&_span:nth-child(2)]:-rotate-45 "
             : ""
@@ -74,7 +74,7 @@ function Sidebar() {
       <aside
         id="nav-menu-1"
         aria-label="Side navigation"
-        className={`fixed top-0 bottom-0 left-0 z-40 flex w-72 flex-col border-r  border-r-slate-200 bg-white transition-transform lg:translate-x-0 dark:bg-slate-900 dark:text-white dark:border-r-slate-900 ${
+        className={`fixed top-0 bottom-0 left-0 z-40 flex w-72 flex-col border-r  border-r-slate-200 bg-white transition-transform lg:translate-x-0 dark:bg-dark-1 dark:text-white dark:border-r-slate-900/70 duration-300 ${
           isSideNavOpen ? "translate-x-0" : " -translate-x-full"
         }`}
       >

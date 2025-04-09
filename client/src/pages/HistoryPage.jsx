@@ -1,5 +1,11 @@
+import History from "../components/History";
+
 function HistoryPage() {
-  return <div>history</div>;
+  return (
+    <div>
+      <History />
+    </div>
+  );
 }
 
 export default HistoryPage;

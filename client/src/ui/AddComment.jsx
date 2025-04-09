@@ -10,9 +10,9 @@ function AddComment() {
   function handleAddComment(e) {
     e.preventDefault();
     const newComment = {
-      comment: comment,
+      comment: comment.trim(),
     };
-    if (!comment) return;
+    if (!comment || !comment.trim()) return;
 
     dispatch(addComment(newComment));
     setComment("");

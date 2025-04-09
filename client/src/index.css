@@ -45,11 +45,19 @@
   --color-orange: #ff8c39;
   --color-red: #ef5a56;
   --color-blue: #3784fb;
+
+  --color-dark-1: #080808;
+  --color-dark-2: #1c2029;
+  --color-dark-3: #0f0f0f;
+}
+
+.ad {
+  background-color: #080808;
 }
 
 @layer components {
   .input {
-    @apply w-full px-8 py-2 border border-slate-600 bg-gray-50 text-slate-900 rounded-lg outline-none text-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 md:text-sm;
+    @apply w-full px-8 py-2 border border-slate-600 bg-gray-50 text-slate-900 rounded-lg outline-none text-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200 md:text-sm dark:bg-transparent dark:placeholder:text-slate-100 dark:text-white;
   }
 
   .login-button {
@@ -65,7 +73,7 @@
   }
 
   .wrapper {
-    @apply w-full h-[60%] justify-center px-8 flex flex-col gap-2.5 md:w-[50%] md:px-14 md:gap-4;
+    @apply w-full h-[80%] justify-center px-8 flex flex-col gap-3 md:w-[46%] md:px-14 md:gap-4;
   }
 
   .active {

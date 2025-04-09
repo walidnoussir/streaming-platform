@@ -7,7 +7,7 @@ function VideoContent() {
   const [showComments, setShowComments] = useState(false);
 
   return (
-    <div className="bg-white py-2 shadow-sm shadow-slate-300 dark:bg-slate-900 dark:shadow-slate-800">
+    <div className="bg-white py-2 shadow-sm shadow-slate-300 dark:bg-dark-3 dark:shadow-dark-3">
       <h3 className="text-xl font-medium text-slate-700 p-1 dark:text-white">
         Memories of the past
       </h3>

@@ -3,7 +3,7 @@ import RegisterForm from "../ui/RegisterForm";
 
 function Register() {
   return (
-    <div className="h-screen flex flex-col items-center md:flex-row">
+    <div className="h-screen flex flex-col items-center md:flex-row dark:bg-slate-900 dark:text-white">
       <Hero />
 
       <RegisterForm />

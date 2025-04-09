@@ -16,7 +16,7 @@ function SearchBar() {
       />
       <Search className="border-l-2 w-8 h-8 border-primary-500 text-primary-600 p-1 cursor-pointer " />
 
-      {search.length > 0 && <SearchWindow />}
+      {search.trim().length > 0 && <SearchWindow />}
     </div>
   );
 }
