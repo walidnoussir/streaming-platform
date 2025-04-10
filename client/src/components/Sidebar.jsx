@@ -3,6 +3,7 @@ import {
   History,
   House,
   Layers,
+  ListPlus,
   LogOut,
   Settings,
   UserCog,
@@ -22,9 +23,9 @@ const pages = [
     path: "/history",
   },
   {
-    page: "Categories",
-    icon: <Layers className="icon" />,
-    path: "/categories",
+    page: "Playlists",
+    icon: <ListPlus className="icon" />,
+    path: "/playlists",
   },
   {
     page: "Admin Panel",

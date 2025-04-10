@@ -6,9 +6,9 @@ import AppLayout from "./components/AppLayout";
 import AdminPanel from "./pages/AdminPanel";
 import Home from "./pages/Home";
 import VideoPage from "./pages/VideoPage";
-import Categories from "./pages/Categories";
 import SettingsPage from "./pages/SettingsPage";
 import HistoryPage from "./pages/HistoryPage";
+import PlaylistsPage from "./pages/PlaylistsPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Route path="home" element={<Home />} />
           <Route path="video-page" element={<VideoPage />} />
           <Route path="history" element={<HistoryPage />} />
-          <Route path="categories" element={<Categories />} />
+          <Route path="playlists" element={<PlaylistsPage />} />
           <Route path="settings" element={<SettingsPage />} />
           <Route path="admin-panel" element={<AdminPanel />} />
         </Route>

@@ -27,7 +27,7 @@ function Categories() {
       <ul className="grid grid-cols-3 md:grid-cols-4 gap-x-2 gap-y-4">
         {categories.map((category) => (
           <li
-            className="py-2 px-4 bg-slate-200 rounded-full text-center font-semibold cursor-pointer hover:bg-slate-300 dark:bg-slate-800 dark:text-white dark:hover:bg-slate-600 text-xs md:text-base"
+            className="py-2 px-4 bg-primary-500 rounded-full text-center font-semibold cursor-pointer hover:bg-primary-600 text-white  text-xs md:text-base"
             onClick={() => handleAddCategory(category)}
           >
             {category}

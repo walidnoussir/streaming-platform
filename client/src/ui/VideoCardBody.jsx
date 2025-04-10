@@ -13,7 +13,6 @@ function VideoCardBody() {
       </header>
       <main className="flex justify-between items-center">
         <p className="text-sm text-slate-400 dark:text-slate-100">
-          {" "}
           By George, jun 3 2023
         </p>
         <span className="text-sm text-slate-400 font-medium dark:text-slate-100">
