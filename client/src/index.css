@@ -69,7 +69,7 @@
   }
 
   .secondary-button {
-    @apply bg-gray-100 text-gray-800 px-6 py-2 rounded-lg font-medium hover:bg-gray-200 text-xl transition-colors cursor-pointer;
+    @apply text-gray-800 px-4 py-2 rounded-lg font-medium hover:bg-slate-50 text-lg transition-colors cursor-pointer border border-slate-400;
   }
 
   .wrapper {

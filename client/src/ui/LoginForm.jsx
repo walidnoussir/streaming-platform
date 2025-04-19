@@ -51,7 +51,7 @@ function LoginForm() {
 
       <div className="flex justify-center items-center">
         <p>Don't have an account ?</p>
-        <Button to="/" type="link">
+        <Button to="/register" type="link">
           Register
         </Button>
       </div>

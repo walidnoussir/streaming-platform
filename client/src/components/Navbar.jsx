@@ -14,7 +14,7 @@ function Navbar() {
 
       <Modal>
         <Modal.Button opens="categoriesModal">
-          <Plus className="h-8 w-8 text-primary-500" />
+          <Plus className="h-8 w-8 text-primary-500 cursor-pointer" />
         </Modal.Button>
         <Modal.Window name="categoriesModal">
           <Categories />

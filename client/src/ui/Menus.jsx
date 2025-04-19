@@ -1,6 +1,8 @@
 import { EllipsisVertical } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
+import { useOutsideClick } from "../hooks/useOutsideClick";
+import { ModalContext } from "./Modal";
 
 const MenusContext = createContext();
 
@@ -26,6 +28,7 @@ function Menu({ children }) {
 
 function Toggle({ id }) {
   const { openId, close, open, setPosition } = useContext(MenusContext);
+  const { close: closeModal } = useContext(ModalContext);
 
   function handleClick(e) {
     e.stopPropagation();
@@ -37,6 +40,7 @@ function Toggle({ id }) {
     });
 
     openId === "" || openId !== id ? open(id) : close();
+    closeModal();
   }
 
   return (
@@ -50,17 +54,21 @@ function Toggle({ id }) {
 }
 
 function List({ id, children }) {
-  const { openId, position } = useContext(MenusContext);
+  const { openId, position, close } = useContext(MenusContext);
+  const ref = useOutsideClick(close);
 
   if (openId !== id) return null;
 
   return createPortal(
-    <ul
-      className="fixed bg-white border shadow-md rounded-md z-50 dark:bg-dark-2"
-      style={{ right: `${position?.x}px`, top: `${position?.y}px` }}
-    >
-      {children}
-    </ul>,
+    <div className="fixed top-0 left-0 h-screen w-full">
+      <ul
+        className="fixed bg-white border shadow-md rounded-md z-50 dark:bg-dark-2"
+        style={{ right: `${position?.x}px`, top: `${position?.y}px` }}
+        ref={ref}
+      >
+        {children}
+      </ul>
+    </div>,
     document.body
   );
 }

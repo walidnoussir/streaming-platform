@@ -14,8 +14,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route index element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route element={<AppLayout />}>
           <Route path="home" element={<Home />} />
           <Route path="video-page" element={<VideoPage />} />

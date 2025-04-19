@@ -4,6 +4,8 @@ import VideoPlayer from "../components/VideoPlayer";
 import VideoInfo from "./VideoInfo";
 import Menus from "./Menus";
 import { Bookmark, Trash2 } from "lucide-react";
+import Modal from "./Modal";
+import ConfirmDelete from "./ConfirmDelete";
 
 function VideoCard({ flexCard, id }) {
   if (flexCard)
@@ -13,13 +15,23 @@ function VideoCard({ flexCard, id }) {
           <VideoPlayer />
           {/*  <!-- Body--> */}
           <VideoInfo />
-          <Menus.Menu>
-            <Menus.Toggle id={id} />
-            <Menus.List id={id}>
-              <Menus.Button icon={<Trash2 />}>delete</Menus.Button>
-              <Menus.Button icon={<Bookmark />}>save</Menus.Button>
-            </Menus.List>
-          </Menus.Menu>
+          <Modal>
+            <Menus.Menu>
+              <Menus.Toggle id={id} />
+              <Menus.List id={id}>
+                <Modal.Button opens="deleteConfirmation">
+                  <button className="flex items-center gap-2 px-3 py-2 w-full hover:bg-slate-100 rounded-md cursor-pointer dark:bg-dark-2 dark:text-white dark:hover:bg-dark-3">
+                    <Trash2 />
+                    delete
+                  </button>
+                </Modal.Button>
+                <Modal.Window name="deleteConfirmation">
+                  <ConfirmDelete />
+                </Modal.Window>
+                <Menus.Button icon={<Bookmark />}>save</Menus.Button>
+              </Menus.List>
+            </Menus.Menu>
+          </Modal>
         </div>
       </div>
     );
