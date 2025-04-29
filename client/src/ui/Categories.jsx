@@ -27,7 +27,7 @@ function Categories() {
   }
 
   return (
-    <div className="py-10 overflow-scroll max-h-[15rem]">
+    <div className="py-10 overflow-scroll max-h-[15rem] w-full">
       <ul className="grid grid-cols-3 md:grid-cols-4 gap-x-2 gap-y-4">
         {categories.map((category) => (
           <li

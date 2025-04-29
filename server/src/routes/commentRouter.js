@@ -1,6 +1,10 @@
 import { Router } from "express";
-import { addComment } from "../controllers/commentController.js";
+import { addComment, addReply } from "../controllers/commentController.js";
+import { validateComment } from "../middlewares/validationMiddleware.js";
 
 const router = Router();
 
-router.post("/add-comment", addComment);
+router.post("/add-comment", validateComment, addComment);
+router.post("/add-reply", addReply);
+
+export default router;

@@ -7,7 +7,7 @@ import { Bookmark, Trash2 } from "lucide-react";
 import Modal from "./Modal";
 import ConfirmDelete from "./ConfirmDelete";
 
-function VideoCard({ flexCard, id }) {
+function VideoCard({ flexCard, id, item }) {
   if (flexCard)
     return (
       <div className="cursor-pointer">
@@ -37,10 +37,9 @@ function VideoCard({ flexCard, id }) {
     );
 
   return (
-    <Link className="cursor-pointer" to="/video-page">
-      <div className="overflow-hidden rounded bg-white text-slate-500 shadow-md shadow-slate-200 dark:bg-dark-3 dark:shadow-dark-3">
-        <VideoPlayer />
-        {/*  <!-- Body--> */}
+    <Link className="cursor-pointer" to={`/video-page/${item.id}`}>
+      <div className="rounded bg-white text-slate-500 shadow-md shadow-slate-200 dark:bg-dark-3 dark:shadow-dark-3">
+        <VideoPlayer item={item} />
         <VideoCardBody />
       </div>
     </Link>

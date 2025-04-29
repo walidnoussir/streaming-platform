@@ -1,0 +1,170 @@
+[2025-04-23 10:18:28] [INFO]: HTTPPOST /api/auth/register
+[2025-04-23 10:19:32] [INFO]: HTTPPOST /api/auth/register
+[2025-04-23 10:20:26] [INFO]: HTTPPOST /api/auth/login
+[2025-04-23 11:05:11] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:05:47] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:05:48] [INFO]: Video created successfully with ID: 6808bb7b383dd9ada5d4097e
+[2025-04-23 11:09:38] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:09:38] [INFO]: Video created successfully with ID: 6808bc62e01e9f6bb8ca593a
+[2025-04-23 11:14:49] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:14:49] [INFO]: Video created successfully with ID: 6808bd999f0df13b75406795
+[2025-04-23 11:21:28] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:21:28] [INFO]: Video created successfully with ID: 6808bf289f0df13b75406797
+[2025-04-23 11:21:43] [INFO]: HTTPPOST /api/auth/login
+[2025-04-23 11:21:43] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-23 11:21:44] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-23 11:22:28] [INFO]: HTTPGET /api/v1/jobs
+[2025-04-23 11:28:38] [INFO]: HTTPDELETE /api/videos/delete-video:6808bd999f0df13b75406795
+[2025-04-23 11:29:13] [INFO]: HTTPDELETE /api/videos/delete-video:6808bd999f0df13b75406795
+[2025-04-23 11:29:13] [INFO]: Attempt to delete video with ID: :6808bd999f0df13b75406795
+[2025-04-23 11:29:13] [ERROR]: ❌ Error deleting video with ID :6808bd999f0df13b75406795: Cast to ObjectId failed for value ":6808bd999f0df13b75406795" (type string) at path "_id" for model "Video"
+[2025-04-23 11:30:34] [INFO]: HTTPDELETE /api/videos/delete-video/:6808bd999f0df13b75406795
+[2025-04-23 11:30:34] [INFO]: Attempt to delete video with ID: :6808bd999f0df13b75406795
+[2025-04-23 11:30:34] [ERROR]: ❌ Error deleting video with ID :6808bd999f0df13b75406795: Cast to ObjectId failed for value ":6808bd999f0df13b75406795" (type string) at path "_id" for model "Video"
+[2025-04-23 11:30:36] [INFO]: HTTPDELETE /api/videos/delete-video/:6808bd999f0df13b75406795
+[2025-04-23 11:30:36] [INFO]: Attempt to delete video with ID: :6808bd999f0df13b75406795
+[2025-04-23 11:30:36] [ERROR]: ❌ Error deleting video with ID :6808bd999f0df13b75406795: Cast to ObjectId failed for value ":6808bd999f0df13b75406795" (type string) at path "_id" for model "Video"
+[2025-04-23 11:30:40] [INFO]: HTTPDELETE /api/videos/delete-video/6808bd999f0df13b75406795
+[2025-04-23 11:30:40] [INFO]: Attempt to delete video with ID: 6808bd999f0df13b75406795
+[2025-04-23 11:30:40] [INFO]: Video deleted successfully with ID: 6808bd999f0df13b75406795
+[2025-04-23 11:32:21] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 11:32:21] [INFO]: Video created successfully with ID: 6808c1b54227547160a0e0a5
+[2025-04-23 12:28:12] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:28:13] [INFO]: Video created successfully with ID: 6808cecc1ea8f250037f0dc2
+[2025-04-23 12:29:35] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:29:42] [INFO]: HTTPPOST /api/auth/login
+[2025-04-23 12:29:42] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-23 12:29:43] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-23 12:29:48] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:29:48] [INFO]: Video created successfully with ID: 6808cf2c1ea8f250037f0dc5
+[2025-04-23 12:36:40] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:36:40] [INFO]: Video created successfully with ID: undefined
+[2025-04-23 12:39:49] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:39:49] [INFO]: Video created successfully with ID: 6808d185c6874c811c78d999
+[2025-04-23 12:40:39] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:42:40] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:43:17] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-23 12:46:34] [INFO]: HTTPDELETE /api/videos/delete-video/6808bd999f0df13b75406790
+[2025-04-23 12:46:34] [INFO]: Attempt to delete video with ID: 6808bd999f0df13b75406790
+[2025-04-23 12:46:34] [WARN]: Video not found with ID: 6808bd999f0df13b75406790
+[2025-04-23 12:46:34] [ERROR]: ❌ Error deleting video with ID 6808bd999f0df13b75406790: video not found
+[2025-04-23 12:48:57] [INFO]: HTTPDELETE /api/videos/delete-video/6808bd999f0df13b75406790
+[2025-04-23 12:48:57] [INFO]: Attempt to delete video with ID: 6808bd999f0df13b75406790
+[2025-04-23 12:48:57] [WARN]: Video not found with ID: 6808bd999f0df13b75406790
+[2025-04-23 12:49:53] [INFO]: HTTPDELETE /api/videos/delete-video/6808bd999f0df13b75406795
+[2025-04-23 12:49:53] [WARN]: Video not found with ID: 6808bd999f0df13b75406795
+[2025-04-23 12:50:01] [INFO]: HTTPDELETE /api/videos/delete-video/6808bd999f0df13b75406795
+[2025-04-23 12:50:01] [WARN]: Video not found with ID: 6808bd999f0df13b75406795
+[2025-04-23 12:50:27] [INFO]: HTTPDELETE /api/videos/delete-video/6808bf289f0df13b75406797
+[2025-04-23 12:50:27] [INFO]: Video deleted successfully with ID: 6808bf289f0df13b75406797
+[2025-04-23 12:50:35] [INFO]: HTTPDELETE /api/videos/delete-video/6808bf289f0df13b75406790
+[2025-04-23 12:50:35] [WARN]: Video not found with ID: 6808bf289f0df13b75406790
+[2025-04-23 12:50:46] [INFO]: HTTPDELETE /api/videos/delete-video/6808bf289f0df13b75406797
+[2025-04-23 12:50:47] [WARN]: Video not found with ID: 6808bf289f0df13b75406797
+[2025-04-24 11:53:39] [INFO]: HTTPGET /api/auth/logout
+[2025-04-24 11:54:11] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 11:54:59] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 11:55:14] [INFO]: HTTPPOST /api/auth/login
+[2025-04-24 11:55:14] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-24 11:55:14] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-24 11:55:18] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 11:55:18] [INFO]: Video created successfully with ID: 680a1896ef0f07b7413aa269
+[2025-04-24 12:00:21] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:00:21] [INFO]: Existing video deleted with ID: 680a1896ef0f07b7413aa269
+[2025-04-24 12:00:21] [INFO]: Video created successfully with ID: 680a19c518520198af22c6b6
+[2025-04-24 12:00:26] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:00:26] [INFO]: Existing video deleted with ID: 680a19c518520198af22c6b6
+[2025-04-24 12:00:27] [INFO]: Video created successfully with ID: 680a19ca18520198af22c6ba
+[2025-04-24 12:01:06] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:01:06] [INFO]: Existing video deleted with ID: 680a19ca18520198af22c6ba
+[2025-04-24 12:01:06] [INFO]: Video created successfully with ID: 680a19f221092e4b10f2316f
+[2025-04-24 12:01:06] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:02:09] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:02:09] [INFO]: Video created successfully with ID: 680a1a3121092e4b10f23172
+[2025-04-24 12:02:29] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:02:29] [INFO]: Existing video deleted with ID: 680a1a3121092e4b10f23172
+[2025-04-24 12:02:29] [INFO]: Video created successfully with ID: 680a1a4521092e4b10f23176
+[2025-04-24 12:02:29] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:03:38] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:03:39] [INFO]: Existing video deleted with ID: 680a1a4521092e4b10f23176
+[2025-04-24 12:03:39] [INFO]: Video created successfully with ID: 680a1a8b082b2283c99276e7
+[2025-04-24 12:03:39] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:03:40] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:03:40] [INFO]: Existing video deleted with ID: 680a1a8b082b2283c99276e7
+[2025-04-24 12:03:41] [INFO]: Video created successfully with ID: 680a1a8c082b2283c99276eb
+[2025-04-24 12:03:41] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:07:01] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:07:01] [INFO]: Existing video deleted with ID: 680a1a8c082b2283c99276eb
+[2025-04-24 12:07:02] [INFO]: Video created successfully with ID: 680a1b55abd5721140b86afc
+[2025-04-24 12:07:02] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:07:38] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:07:39] [INFO]: Existing video deleted with ID: 680a1b55abd5721140b86afc
+[2025-04-24 12:07:39] [INFO]: Video created successfully with ID: 680a1b7babd5721140b86b00
+[2025-04-24 12:07:39] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:08:42] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:08:42] [ERROR]: Error creating video: Cast to ObjectId failed for value "https://www.pexels.com/video/a-monk-meditating-on-a-tree-5386411/" (type string) at path "_id" for model "Video"
+[2025-04-24 12:09:12] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:09:12] [ERROR]: Error creating video: Cast to ObjectId failed for value "https://www.pexels.com/video/a-monk-meditating-on-a-tree-5386411/" (type string) at path "_id" for model "Video"
+[2025-04-24 12:09:44] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:09:44] [INFO]: Existing video deleted with ID: 680a1b7babd5721140b86b00
+[2025-04-24 12:09:44] [INFO]: Video created successfully with ID: 680a1bf8ce4b751816df25ac
+[2025-04-24 12:09:44] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:26:55] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:26:55] [INFO]: Existing video deleted with ID: 680a1bf8ce4b751816df25ac
+[2025-04-24 12:26:55] [INFO]: Video created successfully with ID: 680a1fff5cadfcdcf83735c7
+[2025-04-24 12:26:55] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:26:58] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:26:59] [INFO]: Existing video deleted with ID: 680a1fff5cadfcdcf83735c7
+[2025-04-24 12:26:59] [INFO]: Video created successfully with ID: 680a20035cadfcdcf83735cb
+[2025-04-24 12:26:59] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:27:04] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:27:05] [INFO]: Existing video deleted with ID: 680a20035cadfcdcf83735cb
+[2025-04-24 12:27:05] [INFO]: Video created successfully with ID: 680a20095cadfcdcf83735cf
+[2025-04-24 12:27:05] [ERROR]: Error creating video: Cannot set headers after they are sent to the client
+[2025-04-24 12:27:53] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 12:27:53] [INFO]: Video created successfully with ID: 680a20395cadfcdcf83735d2
+[2025-04-24 12:30:09] [INFO]: HTTPPOST /api/comments/add-comment
+[2025-04-24 12:30:09] [INFO]: Comment created successfully with ID: 680a20c15cadfcdcf83735d4
+[2025-04-24 12:31:09] [INFO]: HTTPPOST /api/comments/add-comment
+[2025-04-24 12:31:09] [INFO]: Comment created successfully with ID: 680a20fde4f893ca582c96d4
+[2025-04-24 12:33:39] [INFO]: HTTPPOST /api/comments/add-reply
+[2025-04-24 12:33:39] [INFO]: Reply created with ID: 680a2193627217d00db041e8
+[2025-04-24 12:33:39] [INFO]: Reply added to parent comment with ID: 680a20fde4f893ca582c96d4
+[2025-04-24 16:38:21] [INFO]: HTTPGET /api/videos/like-video/680a20395cadfcdcf83735d2
+[2025-04-24 16:40:01] [INFO]: HTTPPOST /api/videos/add-video
+[2025-04-24 16:40:02] [INFO]: Video created successfully with ID: 680a5b51eabc607069d60aae
+[2025-04-24 16:40:28] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:40:30] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:40:32] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:42:20] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:42:53] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:42:54] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:42:56] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:42:57] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:43:51] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:43:54] [INFO]: HTTPGET /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:44:03] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:44:06] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:44:35] [INFO]: HTTPPOST /api/videos/like-video/680a20395cadfcdcf83735d2
+[2025-04-24 16:44:54] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:45:02] [INFO]: HTTPGET /api/auth/logout
+[2025-04-24 16:45:09] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-24 16:45:19] [INFO]: HTTPPOST /api/auth/login
+[2025-04-24 16:45:19] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-24 16:45:20] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-24 16:45:31] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 14:47:15] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 14:47:30] [INFO]: HTTPPOST /api/auth/login
+[2025-04-26 14:47:30] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-26 14:47:30] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-26 14:47:35] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 14:51:13] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 14:51:13] [ERROR]: video not found with ID: 680a5b51eabc607069d60aae
+[2025-04-26 14:51:13] [INFO]: Video liked successfully
+[2025-04-26 17:07:27] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 17:09:55] [INFO]: HTTPPOST /api/videos/like-video/680a5b51eabc607069d60aae
+[2025-04-26 17:10:07] [ERROR]: video not found with ID: 680a5b51eabc607069d60aae
+[2025-04-26 17:10:07] [INFO]: Video liked successfully
+[2025-04-26 17:14:09] [INFO]: HTTPPOST /api/comments/add-reply
+[2025-04-26 17:14:10] [INFO]: Reply created with ID: 680d06516b749d2b0156b322
+[2025-04-26 17:14:16] [INFO]: Reply added to parent comment with ID: 680a20fde4f893ca582c96d4

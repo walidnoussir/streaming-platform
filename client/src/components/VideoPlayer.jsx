@@ -1,10 +1,10 @@
-function VideoPlayer() {
+function VideoPlayer({ item }) {
   return (
     <figure>
       <video
+        className="h-60 w-[20rem]"
+        src={item.video_files[0].link}
         controls
-        className="aspect-video w-full h-full"
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
       ></video>
     </figure>
   );

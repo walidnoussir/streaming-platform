@@ -1,4 +1,5 @@
 import { body, validationResult } from "express-validator";
+import { BadRequestError } from "./errorHandler.js";
 
 export const withValidationErrors = (validateValues) => {
   return [
@@ -39,4 +40,16 @@ export const validateLogin = withValidationErrors([
     .withMessage("invalid email format"),
 
   body("password").notEmpty().withMessage("password is required"),
+]);
+
+export const validateVideo = withValidationErrors([
+  body("url").notEmpty().withMessage("url is required"),
+  body("videoOwner").notEmpty().withMessage("videoOwner is required"),
+  body("videoPicture").notEmpty().withMessage("videoPicture is required"),
+  body("duration").notEmpty().withMessage("duration is required"),
+]);
+
+export const validateComment = withValidationErrors([
+  body("text").notEmpty().withMessage("text comment is required"),
+  body("videoId").notEmpty().withMessage("videoId is required"),
 ]);
