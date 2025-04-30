@@ -8,6 +8,7 @@ import { limiter } from "./src/utils/rateLimiter.js";
 import { requestLogger } from "./src/utils/logger.js";
 import videoRouter from "./src/routes/videoRouter.js";
 import { authenticateUser } from "./src/middlewares/authMiddleware.js";
+import chatBotRouter from "./src/routes/chatBotRoutes.js";
 
 export const app = express();
 dotenv.config();
@@ -20,5 +21,6 @@ app.use(requestLogger);
 app.use("/api/comments", authenticateUser, commentRouter);
 app.use("/api/videos", authenticateUser, videoRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/ai", chatBotRouter);
 
 app.use(errorHandlerMiddleware);

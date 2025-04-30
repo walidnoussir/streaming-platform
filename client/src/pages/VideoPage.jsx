@@ -4,14 +4,23 @@ import SuggestedVideos from "../ui/SuggestedVideos";
 import { getPopularVideos } from "../utils/api";
 import { useParams } from "react-router-dom";
 import Spinner from "../ui/Spinner";
+import { useVideoContext } from "../contexts/VideoContext";
 
 function VideoPage() {
-  const { isPending, error, data } = useQuery({
+  const {
+    isPending,
+    error,
+    data: popularData,
+  } = useQuery({
     queryKey: ["videos"],
     queryFn: getPopularVideos,
   });
 
+  const { data: searchData } = useVideoContext();
   const { id } = useParams();
+
+  const data = popularData || searchData;
+
 
   if (error) console.log(error);
   if (isPending) return <Spinner />;

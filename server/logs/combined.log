@@ -168,3 +168,18 @@
 [2025-04-26 17:14:09] [INFO]: HTTPPOST /api/comments/add-reply
 [2025-04-26 17:14:10] [INFO]: Reply created with ID: 680d06516b749d2b0156b322
 [2025-04-26 17:14:16] [INFO]: Reply added to parent comment with ID: 680a20fde4f893ca582c96d4
+[2025-04-30 10:47:59] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:48:19] [INFO]: HTTPPOST /api/auth/login
+[2025-04-30 10:48:20] [INFO]: 🔐 Login attempt for email: walid@gmail.com
+[2025-04-30 10:48:20] [INFO]: ✅ User logged in successfully: walid@gmail.com
+[2025-04-30 10:48:26] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:52:29] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:52:56] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:58:39] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:58:41] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 10:59:07] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 11:00:37] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 11:00:43] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 11:37:40] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 11:39:52] [INFO]: HTTPPOST /api/ai/chat
+[2025-04-30 11:58:22] [INFO]: HTTPPOST /api/ai/chat
