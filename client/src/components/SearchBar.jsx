@@ -21,7 +21,6 @@ function SearchBar() {
 
   if (error) console.log(error);
   if (isPending) console.log("loading");
-  console.log(data);
 
   return (
     <div className="flex items-center gap-3.5 border-2 border-primary-500 py-1 px-2.5 rounded-full focus:border-2 focus:border-primary-500 md:w-full relative">
@@ -34,7 +33,9 @@ function SearchBar() {
       />
       <Search className="border-l-2 w-8 h-8 border-primary-500 text-primary-600 p-1 cursor-pointer " />
 
-      {search.trim().length > 0 && <SearchWindow data={data} />}
+      {search.trim().length > 0 && (
+        <SearchWindow data={data} setSearch={setSearch} />
+      )}
     </div>
   );
 }

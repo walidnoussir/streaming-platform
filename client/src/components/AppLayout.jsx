@@ -6,11 +6,12 @@ import { VideoProvider } from "../contexts/VideoContext";
 function AppLayout() {
   return (
     <VideoProvider>
-      <div className="flex w-screen h-screen">
+      <div className="flex h-screen">
         <Sidebar />
-        <div className="w-full flex flex-col lg:ml-22">
+
+        <div className="flex flex-col flex-1">
           <Navbar />
-          <main className="w-full h-full bg-snow overflow-y-scroll dark:bg-dark-2 transition-colors duration-300">
+          <main className="flex-1 bg-snow overflow-y-auto dark:bg-dark-2 transition-colors duration-300">
             <Outlet />
           </main>
         </div>

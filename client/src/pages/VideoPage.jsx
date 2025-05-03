@@ -7,8 +7,10 @@ import Spinner from "../ui/Spinner";
 import { useVideoContext } from "../contexts/VideoContext";
 
 function VideoPage() {
+  const { id } = useParams();
+
   const {
-    isPending,
+    isPending: isPendingPopular,
     error,
     data: popularData,
   } = useQuery({
@@ -16,19 +18,20 @@ function VideoPage() {
     queryFn: getPopularVideos,
   });
 
-  const { data: searchData } = useVideoContext();
-  const { id } = useParams();
+  const { data: searchData, isPending: isPendingSearch = false } =
+    useVideoContext();
 
-  const data = popularData || searchData;
+  const isLoading = isPendingPopular || isPendingSearch;
 
-
+  if (isLoading) return <Spinner />;
   if (error) console.log(error);
-  if (isPending) return <Spinner />;
 
+  // const data = searchData?.videos?.length ? searchData : popularData;
+  const data = searchData || popularData;
   if (!data) return;
 
-  const video = data.videos.find((vid) => String(vid.id) === id);
-  console.log(video);
+  const video = data.videos.find((vid) => vid.id === Number(id));
+  console.log(data);
 
   return (
     <div className="flex flex-col gap-2 md:flex-row h-screen">
