@@ -1,44 +1,71 @@
-import {
-  ArrowDownToLine,
-  Bookmark,
-  Star,
-  ThumbsDown,
-  ThumbsUp,
-} from "lucide-react";
-import { useState } from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { ArrowDownToLine, Bookmark, Heart } from "lucide-react";
+import { useEffect, useState } from "react";
+import { getLikes, getSavedVideos, like } from "../utils/api";
+import { useParams } from "react-router-dom";
+import { handleSaveVideo } from "../constants/handleSaveVideo";
 
-function VideoActions() {
+function VideoActions({ item }) {
+  const { id } = useParams();
   const [isLiked, setIsLiked] = useState(false);
-  const [isDisliked, setIsDisliked] = useState(false);
-  const [isSaved, setIsSaved] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
+  const queryClient = useQueryClient();
+
+  const { data, isLoading } = useQuery({
+    queryKey: ["like", id],
+    queryFn: () => getLikes(id),
+  });
+
+  const { mutate } = useMutation({
+    mutationFn: () => like(id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["like", id] });
+    },
+  });
+
+  const saveMutation = useMutation({
+    mutationFn: () => handleSaveVideo(item),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["savedVideos"] });
+    },
+  });
+
+  const {
+    data: savedVideos,
+    isLoading: isLoadingSave,
+    error,
+  } = useQuery({
+    queryKey: ["savedVideos"],
+    queryFn: getSavedVideos,
+  });
+
+  useEffect(() => {
+    if (data) {
+      setIsLiked(data.liked);
+    }
+  }, [data]);
+
+  if (isLoading) return null;
+
+  if (isLoadingSave) return <p>Loading...</p>;
+  if (error) console.log(error);
+
+  const isSaved = savedVideos?.some((vid) => vid.url === id);
 
   return (
-    <div className="flex justify-evenly py-1 px-2 overflow-x-scroll gap-1.5 md:justify-baseline">
+    <div className="flex justify-end py-1 px-2 overflow-x-scroll gap-1.5 md:justify-baseline">
       <div className="action">
-        <ThumbsUp
-          className={`icon cursor-pointer ${isLiked ? "fill-white" : ""}`}
-          onClick={() => setIsLiked((like) => !like)}
+        <Heart
+          className={`icon cursor-pointer ${isLiked ? "fill-primary-500" : ""}`}
+          onClick={() => mutate()}
         />
-        <span className="border-r border-black pr-0.5">0</span>
-        <ThumbsDown
-          className={`icon cursor-pointer ${isDisliked ? "fill-white" : ""}`}
-          onClick={() => setIsDisliked((dislike) => !dislike)}
-        />
+        <h1 className="flex items-center gap-2">
+          <span className="text-sm">{data.count}</span>
+        </h1>
       </div>
 
-      <div className="action">
-        <Star
-          className={`icon cursor-pointer ${isFavorite ? "fill-white" : ""}`}
-          onClick={() => setIsFavorite((favorite) => !favorite)}
-        />
-        <span className="text-sm">Favorite</span>
-      </div>
-
-      <div className="action">
+      <div className="action" onClick={() => saveMutation.mutate()}>
         <Bookmark
-          className={`icon cursor-pointer ${isSaved ? "fill-white" : ""}`}
-          onClick={() => setIsSaved((save) => !save)}
+          className={`icon cursor-pointer ${isSaved ? "fill-primary-500" : ""}`}
         />
         <span className="text-sm">Save</span>
       </div>

@@ -2,16 +2,29 @@ import { useForm } from "react-hook-form";
 
 import Button from "./Button";
 import FormRow from "./FormRow";
+import customAxios from "../utils/customAxios";
+import toast from "react-hot-toast";
 
 function RegisterForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
   const { errors } = formState;
 
-  function onSubmit(data) {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const { username, email, password } = data;
+
+    try {
+      await customAxios.post("/auth/register", {
+        username,
+        email,
+        password,
+      });
+      toast.success("User registered successfully");
+    } catch (err) {
+      toast.error("registration failed", err.message);
+    }
 
     reset();
-  }
+  };
 
   return (
     <form className="wrapper" onSubmit={handleSubmit(onSubmit)}>

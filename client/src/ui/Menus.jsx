@@ -45,10 +45,10 @@ function Toggle({ id }) {
 
   return (
     <button
-      className="bg-none border-none p-2 rounded-sm translate-x-3.5 transition-all duration-75 cursor-pointer"
+      className="bg-transparent border-none p-2 rounded-full cursor-pointer hover:bg-gray-100 dark:hover:bg-dark-3 transition duration-150"
       onClick={handleClick}
     >
-      <EllipsisVertical />
+      <EllipsisVertical className="text-gray-600 dark:text-gray-300" />
     </button>
   );
 }
@@ -60,15 +60,13 @@ function List({ id, children }) {
   if (openId !== id) return null;
 
   return createPortal(
-    <div className="fixed top-0 left-0 h-screen w-full">
-      <ul
-        className="fixed bg-white border shadow-md rounded-md z-50 dark:bg-dark-2"
-        style={{ right: `${position?.x}px`, top: `${position?.y}px` }}
-        ref={ref}
-      >
-        {children}
-      </ul>
-    </div>,
+    <ul
+      className="fixed bg-white border border-gray-200 shadow-lg rounded-lg z-50 dark:bg-dark-2 dark:border-dark-3 min-w-[160px] max-w-[200px] py-2"
+      style={{ right: `${position?.x}px`, top: `${position?.y}px` }}
+      ref={ref}
+    >
+      {children}
+    </ul>,
     document.body
   );
 }
@@ -84,7 +82,7 @@ function Button({ children, icon, onClick }) {
   return (
     <li>
       <button
-        className="flex items-center gap-2 px-3 py-2 w-full hover:bg-slate-100 rounded-md cursor-pointer dark:bg-dark-2 dark:text-white dark:hover:bg-dark-3"
+        className="flex items-center gap-2 px-3 py-1 w-full hover:bg-slate-100 rounded-md cursor-pointer dark:bg-dark-2 dark:text-white dark:hover:bg-dark-3"
         onClick={handleClick}
       >
         {icon}

@@ -4,39 +4,33 @@ import SuggestedVideos from "../ui/SuggestedVideos";
 import { getPopularVideos } from "../utils/api";
 import { useParams } from "react-router-dom";
 import Spinner from "../ui/Spinner";
-import { useVideoContext } from "../contexts/VideoContext";
 
 function VideoPage() {
   const { id } = useParams();
 
   const {
-    isPending: isPendingPopular,
+    isLoading: isLoadingPopular,
+    isError: isErrorPopular,
     error,
-    data: popularData,
+    data,
   } = useQuery({
     queryKey: ["videos"],
     queryFn: getPopularVideos,
   });
 
-  const { data: searchData, isPending: isPendingSearch = false } =
-    useVideoContext();
+  if (isLoadingPopular) return <Spinner />;
+  if (isErrorPopular) return <div>Error: {error.message}</div>;
 
-  const isLoading = isPendingPopular || isPendingSearch;
+  if (!data) return <div>No data found</div>;
 
-  if (isLoading) return <Spinner />;
-  if (error) console.log(error);
+  const video = data.videos?.find((vid) => vid.id === Number(id));
 
-  // const data = searchData?.videos?.length ? searchData : popularData;
-  const data = searchData || popularData;
-  if (!data) return;
-
-  const video = data.videos.find((vid) => vid.id === Number(id));
-  console.log(data);
+  if (!video) return <div>Video not found</div>;
 
   return (
-    <div className="flex flex-col gap-2 md:flex-row h-screen">
-      {video && <VideoDetails video={video} />}
-      {/* <SuggestedVideos /> */}
+    <div className="flex flex-col gap-10 md:flex-row h-screen">
+      <VideoDetails video={video} />
+      <SuggestedVideos data={data} />
     </div>
   );
 }

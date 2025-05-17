@@ -19,8 +19,6 @@ export const login = async (req, res) => {
   try {
     const { password, email } = req.body;
 
-    logger.info(`🔐 Login attempt for email: ${email}`);
-
     const user = await User.findOne({ email });
 
     const isValidUser =

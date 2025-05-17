@@ -1,22 +1,21 @@
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { getCurrUser } from "../utils/api";
 
 function Profile() {
+  const { data, isLoading } = useQuery({
+    queryKey: ["user"],
+    queryFn: getCurrUser,
+  });
+
+  if (isLoading) return <p>...</p>;
+
   return (
-    <>
-      <a
-        href="#"
-        className="relative inline-flex items-center justify-center w-12 h-12 text-white rounded-full"
-      >
-        <img
-          src="https://i.pravatar.cc/48?img=1"
-          alt="user name"
-          title="username"
-          width="48"
-          height="48"
-          className="max-w-full border-2 border-primary-500 rounded-full"
-        />
-      </a>
-    </>
+    <Link to={`/profile/${data._id}`}>
+      <div className="w-10 h-10 rounded-full flex items-center justify-center text-green-500 text-xl uppercase font-bold border-2 border-green-600">
+        {data?.username[0]}
+      </div>
+    </Link>
   );
 }
 

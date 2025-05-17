@@ -1,16 +1,30 @@
+import toast from "react-hot-toast";
 import Button from "./Button";
 import FormRow from "./FormRow";
 import { useForm } from "react-hook-form";
+import customAxios from "../utils/customAxios";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  function onSubmit(data) {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const { email, password } = data;
+
+    try {
+      await customAxios.post("/auth/login", { email, password });
+      toast.success("User logged in successfully");
+      navigate("/home");
+    } catch (err) {
+      toast.error("Login failed", err.message);
+      console.log(err);
+    }
 
     reset();
-  }
+  };
 
   return (
     <form className="wrapper" onSubmit={handleSubmit(onSubmit)}>
@@ -36,7 +50,7 @@ function LoginForm() {
         />
       </FormRow>
 
-      <FormRow label="confirm password" error={errors?.password?.message}>
+      <FormRow label="Password" error={errors?.password?.message}>
         <input
           className="input"
           type="password"
@@ -47,7 +61,7 @@ function LoginForm() {
         />
       </FormRow>
 
-      <Button type="login">Register</Button>
+      <Button type="login">Login</Button>
 
       <div className="flex justify-center items-center">
         <p>Don't have an account ?</p>

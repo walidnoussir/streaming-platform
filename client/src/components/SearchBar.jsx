@@ -20,6 +20,11 @@ function SearchBar() {
   }, [search, refetch]);
 
   if (error) console.log(error);
+
+  if (data) {
+    localStorage.setItem("dataSearch", JSON.stringify(data));
+  }
+
   if (isPending) console.log("loading");
 
   return (

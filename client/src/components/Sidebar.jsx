@@ -1,15 +1,26 @@
 import React, { useState } from "react";
-import { History, House, ListPlus, LogOut, UserCog } from "lucide-react";
+import Cookies from "js-cookie";
+import { toast } from "react-hot-toast";
+
+import {
+  BookmarkCheck,
+  History,
+  House,
+  ListPlus,
+  LogOut,
+  UserCog,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
 import Logo from "../ui/Logo";
+import customAxios from "../utils/customAxios";
 
 const pages = [
   { page: "Home", icon: <House className="icon" />, path: "/home" },
   { page: "History", icon: <History className="icon" />, path: "/history" },
   {
-    page: "Playlists",
-    icon: <ListPlus className="icon" />,
-    path: "/playlists",
+    page: "Saved Videos",
+    icon: <BookmarkCheck className="icon" />,
+    path: "/saved-videos",
   },
   {
     page: "Admin Panel",
@@ -20,6 +31,16 @@ const pages = [
 
 function Sidebar() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+
+  const handleLogOut = async () => {
+    try {
+      await customAxios.get("/auth/logout");
+      Cookies.remove("token");
+      toast.success("Logged out successfully");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <>
@@ -83,6 +104,7 @@ function Sidebar() {
             <NavLink
               to="/"
               className="hover:bg-primary-400 hover:text-white font-medium py-3 px-4 rounded-lg"
+              onClick={handleLogOut}
             >
               <li className="flex items-center gap-3.5">
                 <LogOut className="icon" />

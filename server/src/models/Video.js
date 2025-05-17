@@ -4,26 +4,13 @@ const VideoSchema = new mongoose.Schema(
   {
     url: String,
     videoOwner: String,
-    videoPicture: String,
+    image: String,
     duration: Number,
 
     addedBy: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
-
-    likes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-    dislikes: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
   },
   { timestamps: true }
 );

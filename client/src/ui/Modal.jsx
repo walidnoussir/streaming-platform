@@ -31,18 +31,18 @@ function Window({ children, name }) {
   if (name !== openName) return null;
 
   return createPortal(
-    <div className="fixed top-0 left-0 h-screen w-full bg-transparent z-100 backdrop-blur-xs">
+    <div className="fixed inset-0 z-[100] bg-opacity-30 backdrop-blur-sm flex items-center justify-center p-4">
       <main
         ref={ref}
-        className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg py-2 px-4  dark:bg-dark-3 w-full"
+        className="relative w-full max-w-2xl bg-white dark:bg-dark-3 rounded-2xl shadow-lg p-6 max-h-[90vh] overflow-y-auto z-[1000]"
       >
         <button
-          className="absolute top-2 right-2 text-primary-500 h-8 w-8 cursor-pointer "
+          className="absolute top-3 right-3 text-primary-500 h-8 w-8 cursor-pointer"
           onClick={close}
         >
           <X className="h-full w-full" />
         </button>
-        <div className="h-full overflow-y-scroll">{children}</div>
+        {children}
       </main>
     </div>,
     document.body
@@ -51,5 +51,15 @@ function Window({ children, name }) {
 
 Modal.Button = Button;
 Modal.Window = Window;
+
+export const useModalContext = () => {
+  const context = useContext(ModalContext);
+
+  if (!context) {
+    throw new Error("useModalContext was used outside of ModalProvider");
+  }
+
+  return context;
+};
 
 export default Modal;

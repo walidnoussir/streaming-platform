@@ -2,18 +2,22 @@ import axios from "axios";
 import * as dotenv from "dotenv";
 dotenv.config();
 
+const HUGGINGFACE_API_URL =
+  "https://api-inference.huggingface.co/models/bigscience/bloom";
+const HUGGINGFACE_API_TOKEN = "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";
+
 export const chatWithAi = async (req, res) => {
   try {
     const { message } = req.body;
 
     const response = await axios.post(
-      process.env.HUGGINGFACE_API_URL,
+      HUGGINGFACE_API_URL,
       {
         inputs: message,
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.HUGGINGFACE_API_TOKEN}`,
+          Authorization: `Bearer ${HUGGINGFACE_API_TOKEN}`,
           "Content-Type": "application/json",
         },
       }

@@ -1,6 +1,6 @@
 function Spinner() {
   return (
-    <div className="h-full flex inset-0 items-center justify-center backdrop-blur-lg z-50">
+    <div className="h-screen flex inset-0 items-center justify-center backdrop-blur-lg z-50">
       <svg
         viewBox="0 0 24 24"
         fill="none"
