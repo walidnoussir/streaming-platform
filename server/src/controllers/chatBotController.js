@@ -2,10 +2,6 @@
 // import * as dotenv from "dotenv";
 // dotenv.config();
 
-// const HUGGINGFACE_API_URL =
-//   "https://api-inference.huggingface.co/models/bigscience/bloom";
-// const HUGGINGFACE_API_TOKEN = "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";
-
 // export const chatWithAi = async (req, res) => {
 //   try {
 //     const { message } = req.body;
