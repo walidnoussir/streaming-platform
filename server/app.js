@@ -8,7 +8,6 @@ import { limiter } from "./src/utils/rateLimiter.js";
 import { requestLogger } from "./src/utils/logger.js";
 import videoRouter from "./src/routes/videoRouter.js";
 import { authenticateUser } from "./src/middlewares/authMiddleware.js";
-import chatBotRouter from "./src/routes/chatBotRoutes.js";
 import userRouter from "./src/routes/userRouter.js";
 import cors from "cors";
 import saveRouter from "./src/routes/saveRouter.js";
@@ -33,6 +32,5 @@ app.use("/api/videos", authenticateUser, videoRouter);
 app.use("/api/saved", authenticateUser, saveRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/user", authenticateUser, userRouter);
-app.use("/api/ai", chatBotRouter);
 
 app.use(errorHandlerMiddleware);
